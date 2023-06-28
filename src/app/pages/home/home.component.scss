@@ -1,0 +1,282 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    /* Chrome, Safari */
+    -moz-osx-font-smoothing: grayscale;
+    /* Firefox */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* formatações genéricas */
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: .5s;
+}
+
+a:hover:not(.logo) {
+    color: #87E9FF;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* header  */
+.header-page {
+    width: 100%;
+    height: 100vh;
+    padding-left: 5rem;
+    background-image: linear-gradient(rgba(4, 9, 30, .3), rgba(4, 9, 30, .9)), url("../../../assets/hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #ffffff;
+
+}
+
+.header-page h1 {
+    font-size: 20px;
+}
+
+.header-page p {
+    font-size: 48px;
+    margin: 20px 0 50px;
+    line-height: 1.5;
+}
+
+.btn {
+    background-color: #87E9FF;
+    border: 2px solid #87E9FF;
+    padding: 8px 35px;
+    border-radius: 5px;
+    color: var(--color-light);
+    transition: .5s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: transparent;
+}
+
+/* menu sanduíche */
+.menu-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 32px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.box {
+    width: 100%;
+    height: 50vh;
+    padding-left: 5rem;
+    background-image: linear-gradient(90deg, rgba(4, 9, 30, .9), rgba(4, 9, 30, .3), ), url("../../../assets/hero2.jpg");
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.box h1 {
+    font-size: 36px;
+}
+
+.box p {
+    width: 50%;
+    font-size: 18px;
+    font-weight: 100;
+    margin: 20px 0 50px;
+    line-height: 1.5;
+}
+
+.box-enterprise {
+    width: 100%;
+    height: 50vh;
+    padding-right: 5rem;
+    background-image: linear-gradient(90deg, rgba(4, 9, 30, .3) 13%, rgba(4, 9, 30, .9) 63%), url("../../../assets/hero3.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.box-enterprise h1 {
+    font-size: 36px;
+}
+
+.box-enterprise p {
+    width: 50%;
+    font-size: 18px;
+    font-weight: 100;
+    margin: 20px 0px 50px;
+    line-height: 1.5;
+}
+
+.box-btn {
+    border: 2px solid #87E9FF;
+    padding: 8px 35px;
+    border-radius: 5px;
+    color: #ffffff;
+    transition: .5s;
+    cursor: pointer;
+}
+
+/* fim header */
+
+/* Começo footer */
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.footer-flex {
+    display: flex;
+}
+
+.logo {
+    max-width: 150px;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+h3 {
+    margin-left: 3rem;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+
+    p {
+        margin-top: 10px;
+        margin-left: 0.5rem;
+    }
+}
+
+.social-icons {
+    margin-left: 3rem;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons li:last-child {
+    margin-right: 0;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 24px;
+}
+
+/******************** Pensando no responsivo  **************************/
+/******** Menu ****************/
+@media(max-width: 1000px) {
+
+    /* header  */
+    .header-page {
+        padding-left: 2rem;
+    }
+
+    .header-page h1 {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .header-page p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 28px;
+        font-weight: 200;
+    }
+
+    .btn {
+        background-color: #87E9FF;
+        border: 2px solid #87E9FF;
+        padding: 8px 35px;
+        border-radius: 5px;
+        color: #ffffff;
+        transition: .5s;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: transparent;
+    }
+
+    .box {
+        height: 100vh;
+
+        padding-left: 2rem;
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            width: 80%;
+            font-size: 16px;
+        }
+    }
+
+    .box-enterprise {
+        height: 100vh;
+        background-image: linear-gradient(90deg, rgba(4, 9, 30, .9), rgba(4, 9, 30, .3), ), url("../../../assets/hero3.webp");
+        padding-left: 2rem;
+        padding-right: 0;
+        align-items: flex-start;
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            width: 80%;
+            font-size: 16px;
+        }
+    }
+
+    .box-btn {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .footer-flex {
+        display: flex;
+        flex-direction: column;
+    }
+
+}

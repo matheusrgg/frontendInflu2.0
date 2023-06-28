@@ -1,0 +1,137 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    // height: 100vh;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.box-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    width: 400px;
+    height: 400px;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 1px 1px 30px #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+
+    img {
+        height: 300px;
+        width: 300px;
+    }
+
+    h3 {
+        font-size: 32px;
+        font-weight: 600;
+    }
+
+    &:hover {
+        background-color: #87E9FF;
+        color: #fff;
+    }
+}
+
+.selected {
+    background-color: #87E9FF;
+    color: #fff;
+}
+
+.btn {
+    width: 40%;
+    height: 55px;
+    margin-top: 2rem;
+    background-color: #87E9FF;
+    color: #fff;
+    font-weight: 600;
+    transition: .5;
+
+
+    &:hover {
+        background-color: #bbf1fd;
+    }
+}
+
+/******************** Pensando no responsivo  **************************/
+/******** Menu ****************/
+
+@media(max-width: 1400px) {
+    .box {
+        width: 300px;
+        height: 300px;
+
+        img {
+            height: 200px;
+            width: 200px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+    }
+}
+
+@media(max-width: 1000px) {
+    h1 {
+        margin-top: 2rem;
+    }
+
+    .container {
+        height: auto;
+    }
+
+    .box-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 450px;
+        margin-bottom: 5rem;
+    }
+
+}
+
+@media(max-width: 530px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .box-group {
+        width: 300px;
+    }
+
+    .box {
+        width: 300px;
+        height: 300px;
+
+        img {
+            height: 200px;
+            width: 200px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+    }
+
+    .btn {
+        width: 300px;
+    }
+
+}

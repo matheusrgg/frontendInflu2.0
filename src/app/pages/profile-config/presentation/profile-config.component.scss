@@ -1,0 +1,275 @@
+section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title-page {
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+
+    h1 {
+        font-size: 30px;
+        font-weight: 600;
+    }
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.avatar-section {
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #c8c8c8;
+    border-radius: 6px;
+
+    .avatar-frame {
+        width: 150px;
+        height: 150px;
+        margin-right: 5rem;
+        border-radius: 50%;
+        border: 2px solid #dcdcdc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        .avatar {
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #eee;
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+    }
+
+    .update-avatar-btn {
+        position: relative;
+        display: inline-block;
+        font-size: 1rem;
+        padding: 1rem;
+        margin-right: 2rem;
+        border-radius: 5px;
+        color: #ffffff;
+        background-color: #d9d9d9;
+    }
+
+    .update-avatar-btn input[type="file"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .lock-upload {
+        margin-right: 0.5rem;
+    }
+
+    .remove-avatar-btn {
+        border-style: none;
+        background-color: transparent;
+        transition: .5;
+        font-weight: 900;
+
+        &:hover {
+            color: #acf0ff;
+        }
+    }
+}
+
+.form-section {
+    width: 100%;
+
+    .form-field {
+        width: 100%;
+    }
+}
+
+.button-group {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-button {
+    width: 200px;
+    margin-right: 2rem;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 3px solid #87E9FF;
+    background-color: transparent;
+    color: #000;
+    font-weight: 900;
+    font-size: 1rem;
+    transition: .5;
+
+    &:hover {
+        background-color: #efefef;
+        border: 3px solid #efefef;
+    }
+}
+
+.area-form {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+
+    .area-section {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #c8c8c8;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            color: #888888;
+        }
+
+        span {
+            color: #000;
+            font-weight: 600;
+        }
+
+    }
+
+
+}
+
+.area-block {
+    background-color: #d9d9d9;
+}
+
+.edit-icon {
+    cursor: pointer;
+    transition: 0.5;
+
+    &:hover {
+        color: #87E9FF;
+    }
+}
+
+.edit-button {
+    width: 200px;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 3px solid #87E9FF;
+    background-color: #87E9FF;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 900;
+    transition: .5;
+
+    &:hover {
+        background-color: #acf0ff;
+        border: 3px solid #acf0ff;
+    }
+}
+
+@media (max-width: 1000px) {
+    .content {
+        width: 80%;
+
+    }
+
+    .avatar-section {
+        padding: 1rem;
+
+        .avatar-frame {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    .update-avatar-btn {
+        span {
+            font-size: 14px;
+        }
+    }
+
+    .remove-avatar-btn {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .content {
+        width: 80%;
+
+    }
+
+    .avatar-section {
+        padding: 0rem;
+        border: none;
+
+        .avatar-frame {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    .update-avatar-btn {
+        span {
+            font-size: 11px;
+        }
+    }
+
+    .remove-avatar-btn {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 450px) {
+    .content {
+        width: 90%;
+
+    }
+
+    .avatar-section {
+        .avatar-frame {
+            width: 60px;
+            height: 60px;
+            margin-right: 1rem;
+        }
+    }
+
+    .update-avatar-btn {
+        span {
+            font-size: 12px;
+        }
+    }
+
+    .remove-avatar-btn {
+        font-size: 12px;
+    }
+
+}

@@ -1,0 +1,81 @@
+<div class="register-page">
+    <header>
+        <app-navbar-login></app-navbar-login>
+    </header>
+
+    <body>
+        <section>
+            <div class="title-box">
+                <h1 class="register-title">Preencha as informações da sua marca</h1>
+            </div>
+            <div class="card-body p-5">
+                <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+                    <p>
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label>Nome</mat-label>
+                            <input type="text" matInput placeholder="Seu nome" formControlName="name">
+                            <mat-icon matSuffix>person icon</mat-icon>
+                        </mat-form-field>
+                    </p>
+
+                    <p>
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label>E-mail</mat-label>
+                            <input matInput placeholder="Seu e-mail" formControlName="email">
+                            <mat-icon matSuffix>email icon</mat-icon>
+                        </mat-form-field>
+                    </p>
+
+                    <mat-error *ngIf="
+                        registrationForm.controls['email'].invalid &&
+                        registrationForm.controls['email'].touched">Email inválido</mat-error>
+
+
+
+                    <p>
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label>CNPJ</mat-label>
+                            <input matInput placeholder="Seu documento" formControlName="document"
+                                mask="00.000.000/0000-00">
+                        </mat-form-field>
+                    </p>
+
+                    <mat-error *ngIf="
+                        registrationForm.controls['document'].invalid &&
+                        registrationForm.controls['document'].touched">CNPJ inválido</mat-error>
+
+                    <p>
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label>Senha</mat-label>
+                            <input [type]="fieldTextType ? 'text' : 'password'" matInput placeholder="Sua senha"
+                                formControlName="password">
+                            <mat-icon matSuffix (click)="toggleFieldTextType()">{{showPasswordStatus}}</mat-icon>
+                        </mat-form-field>
+                    </p>
+
+                    <p>
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label>Confirme Sua Senha</mat-label>
+                            <input [type]="fieldTextTypeConfirm ? 'text' : 'password'" matInput
+                                placeholder="Confirme sua senha" formControlName="confirmPassword">
+                            <mat-icon matSuffix
+                                (click)="toggleFieldTextTypeConfirm()">{{showPasswordStatusConfirm}}</mat-icon>
+
+                        </mat-form-field>
+                    </p>
+
+                    <mat-error *ngIf="
+                        registrationForm.controls['confirmPassword'].invalid &&
+                        registrationForm.controls['confirmPassword'].touched">Senhas não conferem</mat-error>
+
+                    <button class="btn" type="submit" [disabled]="registrationForm.invalid">Cadastrar</button>
+                </form>
+
+
+            </div>
+        </section>
+
+        <app-background-movement></app-background-movement>
+    </body>
+</div>

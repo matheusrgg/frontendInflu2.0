@@ -1,0 +1,21 @@
+<header>
+  <app-navbar-login></app-navbar-login>
+</header>
+
+<div class="container">
+  <h1>Escolha seu perfil</h1>
+  <section class="box-group">
+    <div class="box" [class.selected]="selectedBox === 1" (click)="selectBox(1)">
+      <img src="../../../../assets/story-board-influ.svg">
+      <h3 class="card-title">Influenciador</h3>
+    </div>
+
+    <div class="box" [class.selected]="selectedBox === 2" (click)="selectBox(2)">
+      <img src="../../../../assets/story-board-emp.svg">
+      <h3 class="card-title">Empreendedor</h3>
+    </div>
+
+  </section>
+  <button class="btn" [disabled]="selectedBox === 0" (click)="continue()">Continuar</button>
+  <app-background-movement></app-background-movement>
+</div>

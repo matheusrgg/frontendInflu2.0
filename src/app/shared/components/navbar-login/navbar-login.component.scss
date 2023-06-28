@@ -1,0 +1,26 @@
+.nav-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.navbar-logo img {
+    width: 100px;
+    margin-left: 3rem;
+    cursor: pointer;
+}
+
+@media(max-width: 1000px) {
+    .nav-bar {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar-logo img {
+        // width: 100px;
+        margin-left: 0;
+    }
+}

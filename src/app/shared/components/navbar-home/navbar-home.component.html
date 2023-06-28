@@ -1,0 +1,12 @@
+<nav class="nav-bar" (scroll)="onWindowScroll()">
+    <img (click)="goToHome()" class="logo" src="../../../assets/logoUAzul.svg" alt="Logo da Catch u.">
+    <ul class="nav-menu">
+        <li><a (click)="goToHome()" class="menu-item">Home</a></li>
+        <li><a (click)="goToMoreInfluencer()" class="menu-item">Sou Influenciador</a></li>
+        <li><a (click)="goToMoreEnterprise()" class="menu-item">Sou Empreendedor</a></li>
+        <li><a (click)="goToMoreCatchu()" class="menu-item">Saiba Mais!</a></li>
+        <li><a (click)="goToLogin()" class="menu-item">Entrar</a></li>
+    </ul>
+    <i *ngIf="isMobileLayout" class="fa-solid fa-bars menu-btn mobile-menu-btn" aria-label="menu"
+        (click)="onClickHamburguer()"></i>
+</nav>

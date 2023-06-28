@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    transition: .5s;
+}
+
+a:hover:not(.logo) {
+    color: #87E9FF;
+}
+
+.nav-bar {
+    width: 100%;
+    height: 55px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: .5s;
+    border-bottom: #e8e8e8 solid 2px;
+}
+
+.logout-icon {
+    transition: .5s;
+    cursor: pointer;
+
+    &:hover {
+        color: #87E9FF;
+    }
+}
+
+.logo {
+    font-weight: 600;
+    position: relative;
+    top: 5px;
+    left: 20px;
+    font-size: 32px;
+}
+
+.logo-span {
+    color: #87E9FF;
+}
+
+.heading {
+
+    margin: 3rem 3rem 0 3rem;
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 3rem;
+    }
+
+    span {
+        font-weight: 600;
+        color: #87E9FF;
+    }
+
+    h2 {
+        margin-top: 2rem;
+        font-size: 24px;
+    }
+}
+
+section {
+    padding: 1rem 3rem 3rem 3rem;
+}
+
+.recomendation-box {
+    width: 100%;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 1px 1px 30px #ccc;
+    border-radius: 6px;
+
+
+    .card-title {
+        display: flex;
+
+        align-items: center;
+    }
+
+
+    .user-image {
+        height: 150px;
+        width: 150px;
+        margin-right: 2rem;
+        background-image: linear-gradient(rgba(4, 9, 30, .3), rgba(4, 9, 30, .9)), url("../../../../assets/persondefault.svg");
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 6px;
+
+    }
+
+    .enterprise-image {
+        min-height: 150px;
+        min-width: 150px;
+        margin-right: 2rem;
+        background-image: linear-gradient(rgba(4, 9, 30, .3), rgba(4, 9, 30, .9)), url("../../../../assets/enterprisedefault.svg");
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 6px;
+
+    }
+
+    h4 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+
+    h6 {
+        font-size: 12px;
+    }
+
+    .button-group {
+        display: flex;
+
+        button {
+            width: 100px;
+            height: 50px;
+            margin-left: 1rem;
+
+        }
+    }
+}
+
+/******************** Pensando no responsivo  **************************/
+/******** Menu ****************/
+
+@media(max-width: 750px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-bar {
+        padding: 0;
+    }
+
+    .logo {
+        position: absolute;
+        top: 25px;
+        left: 30px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        background-color: var(--color-blue);
+        margin-top: -1100px;
+        transition: .5s;
+    }
+
+    .mobile-menu {
+        margin-top: 0;
+    }
+
+    .nav-menu li {
+        margin: 30px auto;
+    }
+
+    .nav-menu a {
+        text-transform: uppercase;
+    }
+
+    .heading {
+        margin-top: 2rem;
+        margin: 1rem;
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        span {
+            color: #87E9FF;
+        }
+
+        h2 {
+            font-size: 16px;
+        }
+    }
+
+    section {
+        padding: 0 1rem;
+    }
+
+    .recomendation-box {
+        width: 100%;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #fff;
+        box-shadow: 1px 1px 30px #ccc;
+        border-radius: 6px;
+
+        .card-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .user-image {
+            height: 250px;
+            width: 250px;
+            margin-right: 0;
+            background-image: linear-gradient(rgba(4, 9, 30, .3), rgba(4, 9, 30, .9)), url("../../../../assets/persondefault.svg");
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 6px;
+
+        }
+
+        .enterprise-image {
+            height: 250px;
+            width: 250px;
+            margin-right: 0;
+            background-image: linear-gradient(rgba(4, 9, 30, .3), rgba(4, 9, 30, .9)), url("../../../../assets/enterprisedefault.svg");
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 6px;
+
+        }
+
+        h4 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 0;
+        }
+
+        h6 {
+            font-size: 12px;
+        }
+
+        .button-group {
+            margin-top: 2rem;
+            display: flex;
+            margin-left: -15px;
+
+        }
+    }
+}

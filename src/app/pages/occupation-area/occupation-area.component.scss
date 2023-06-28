@@ -1,0 +1,233 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Opcional para ajustar a altura da página */
+}
+
+.pills-box {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.pills-bt {
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+}
+
+.pills-box span {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.selected span {
+  background-color: #007bff;
+  color: white;
+}
+
+.selected i {
+  color: white;
+}
+
+.pills-box i {
+  margin-left: 5px;
+}
+
+.area-container {
+  margin-top: 20px;
+}
+
+.area-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.area-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.add-area-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.add-area-container input {
+  width: 70%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.add-area-container button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.selected-areas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.selected-areas li {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.add-area-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  background-color: #f5f5f5;
+}
+
+.search-button {
+  padding: 0.5rem;
+  border: none;
+  background-color: #f5f5f5;
+  border-radius: 0 5px 5px 0;
+}
+
+.add-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+}
+
+.fa-search {
+  font-size: 1rem;
+}
+
+
+
+
+// _____________________________________________
+
+body {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+
+.form-box {
+  background-color: white;
+  width: 70%;
+  height: fit-content;
+  border-radius: 6px;
+  padding: 4rem;
+  margin-top: 4rem;
+  background-color: #fff;
+  box-shadow: 1px 1px 30px #ccc;
+  border-radius: 6px;
+
+  .area-container {
+    margin-bottom: 4rem;
+  }
+
+  .options-container {
+    margin-bottom: 4rem;
+  }
+
+  .button-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .back-button {
+    width: 200px;
+    margin-right: 2rem;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 3px solid #87E9FF;
+    background-color: transparent;
+    color: #000;
+    font-weight: 900;
+    font-size: 1rem;
+    transition: .5;
+
+    &:hover {
+      background-color: #efefef;
+      border: 3px solid #efefef;
+    }
+  }
+
+  .edit-button {
+    width: 200px;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 3px solid #87E9FF;
+    background-color: #87E9FF;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 900;
+    transition: .5;
+
+    &:hover {
+      background-color: #acf0ff;
+      border: 3px solid #acf0ff;
+    }
+  }
+}
+
+@media(max-width: 1000px) {
+  .form-box {
+    width: 90%;
+    padding: 2rem;
+  }
+}
+
+@media(max-width: 500px) {
+  .form-box {
+
+    padding: 1rem;
+  }
+}

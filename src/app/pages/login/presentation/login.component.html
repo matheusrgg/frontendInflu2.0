@@ -1,0 +1,56 @@
+<body>
+  <section>
+    <div class="login-form">
+      <img class="logo" src="../../../assets/logoupretoazul.svg" (click)="onClickLogo()" alt="logo catchu">
+      <h1>Entre com a sua conta</h1>
+      <h3>Conecte-se com oportunidades</h3>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <div class="radio-login-form">
+          <div class="radio-login-role">
+            <input type="radio" id="influencer" formControlName="radio" value="influencer" checked
+              (change)="onRoleChange($event)">
+            <label for="influencer">Influenciador</label>
+            <input type="radio" id="company" formControlName="radio" value="company" (change)="onRoleChange($event)">
+            <label for="company">Empresa</label>
+          </div>
+        </div>
+
+        <p>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input formControlName="email" matInput placeholder="Seu e-mail" />
+            <mat-icon matSuffix>email icon</mat-icon>
+          </mat-form-field>
+        </p>
+
+        <div>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input formControlName="password" [type]="fieldTextType ? 'text' : 'password'" matInput
+              placeholder="Sua senha" />
+            <mat-icon matSuffix (click)="toggleFieldTextType()">{{
+              showPasswordStatus
+              }}</mat-icon>
+          </mat-form-field>
+          <mat-error class="error" *ngIf="userUnauthorized">Senha e Email errados</mat-error>
+
+          <a href="forgot-password" style="text-decoration:underline"> Esqueci minha senha</a>
+          <div class="create-account">
+            <p>Não tem conta? </p>
+            <a href="choose-profile" style="text-decoration:underline"> Criar Conta</a>
+          </div>
+
+        </div>
+        <button class="btn" [disabled]="loginForm.invalid">Entrar</button>
+     
+      </form>
+    </div>
+
+    <div class="login-image">
+      <div class="image-context">
+      </div>
+    </div>
+  </section>
+</body>

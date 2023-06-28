@@ -1,0 +1,67 @@
+<header>
+    <app-navbar-logged></app-navbar-logged>
+</header>
+
+<body>
+    <div *ngIf="userType !== 'empreendedor'">
+
+        <div class="influencer-form">
+            <!-- <h1>Enviar Proposta</h1> -->
+            <form [formGroup]="proposalForm" class="send-proposal-form">
+                <!-- <div class="influencer-form" *ngIf="userType == 'influenciador'"> -->
+                <div>
+                    <h4>Nome da Empresa</h4>
+                    <p>
+                        <mat-select formControlName="name">
+                            <mat-option *ngFor="let enterpise of enterprises" [value]="enterpise.id">
+                                {{enterpise.nome}}
+                            </mat-option>
+                        </mat-select>
+
+                    </p>
+                </div>
+
+                <h4>Descrição da Proposta</h4>
+                <textarea class="form-field textarea-form" placeholder="Descreva sua proposta para a empresa..."
+                    formControlName="description"></textarea>
+            </form>
+
+            <div class="button-group">
+                <button (click)="onClickCancel()" class="back-button">Voltar</button>
+                <button class="edit-button" (click)="click()">Enviar</button>
+            </div>
+        </div>
+
+    </div>
+    <div *ngIf="userType !== 'influenciador'">
+
+        <div class="influencer-form">
+            <!-- <h1>Enviar Proposta</h1> -->
+            <form [formGroup]="proposalForm" class="send-proposal-form">
+                <!-- <div class="influencer-form" *ngIf="userType == 'influenciador'"> -->
+                <div>
+                    <h4>Nome da Empresa</h4>
+                    <p>
+                         <mat-select formControlName="name">
+                            <mat-option *ngFor="let enterpise of influencers" [value]="enterpise.id">
+                                {{enterpise.nome}}
+                            </mat-option>
+                        </mat-select> 
+    
+                    </p>
+                </div>
+    
+                <h4>Descrição da Proposta</h4>
+                <textarea class="form-field textarea-form" placeholder="Descreva sua proposta para a empresa..."
+                    formControlName="description"></textarea>
+            </form>
+    
+            <div class="button-group">
+                <button (click)="onClickCancel()" class="back-button">Voltar</button>
+                <button class="edit-button" (click)="click()">Enviar</button>
+            </div>
+        </div>
+    
+    </div>
+
+</body>

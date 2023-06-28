@@ -1,0 +1,32 @@
+<header>
+    <app-navbar-logged></app-navbar-logged>
+</header>
+
+
+<body>
+    <div class="title-page">
+        <h1>Propostas</h1>
+        <button (click)="newProposal()">+ Enviar Proposta</button>
+        <!-- <button (click)="sentProposals()">Propostas Enviadas</button> -->
+        <button (click)="sentProposals()">Propostas Enviadas</button>
+    </div>
+
+
+    <div *ngIf="showReceivedProposals">
+        <div>
+            <h2 class="sub-title">Propostas Recebidas</h2>
+            <div *ngFor="let influencer of proposalsRecebidas; let first = first; let last = last;">
+                <div class="proposal-box" [ngClass]="{'first-item': first, 'last-item': last}">
+                    <div class="proposal-user">
+    
+                        <h4>{{influencer.nome_influenciador}}</h4>
+                    </div>
+                    <button class="eye-btn" (click)="onClickEdit(influencer.id)"><i class="fas fa-eye"></i></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+  
+</body>

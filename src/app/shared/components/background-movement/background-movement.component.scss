@@ -1,0 +1,115 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #fff;
+}
+
+.shape {
+    position: fixed;
+    z-index: 1;
+    /* Define o valor de z-index como 0 */
+}
+
+.shape.rect {
+    width: 10vw;
+    height: 10vw;
+    transform: rotate(45deg);
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+.shape.tri {
+    width: 0;
+    height: 0;
+    transform: rotate(45deg);
+
+}
+
+.shape.rect:nth-child(2n) {
+    top: 25%;
+    left: 25%;
+}
+
+.shape.rect:nth-child(2n+1) {
+    top: 75%;
+    left: 75%;
+}
+
+.shape.tri:nth-child(3n) {
+    top: 50%;
+    left: 10%;
+}
+
+.shape.tri:nth-child(3n+1) {
+    top: 10%;
+    left: 50%;
+}
+
+.shape.tri:nth-child(3n+2) {
+    top: 90%;
+    left: 90%;
+}
+
+@keyframes float-1 {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-50px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.shape-1 {
+    /* Outras regras de estilo */
+    animation: float-1 3s ease-in-out infinite;
+}
+
+@keyframes float-2 {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.shape-2 {
+    /* Outras regras de estilo */
+    animation: float-2 4s ease-in-out infinite;
+}
+
+@keyframes float-3 {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.shape-3 {
+    /* Outras regras de estilo */
+    animation: float-3 5s ease-in-out infinite;
+}

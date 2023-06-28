@@ -1,0 +1,32 @@
+<header>
+    <app-navbar-logged></app-navbar-logged>
+</header>
+
+
+<body>
+<div>
+    <div class="container" style="margin: 70px;">
+        <h1>Tabela de Propostas Enviadas</h1>
+        <button (click)="back()">Voltar</button>
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col">Destinatário</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Data de Envio</th>
+                    <th scope="col">Envio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let influencer of proposalsEnviadasTeste">
+                    <th scope="row">{{influencer.mensagem_proposta}}</th>
+                    <td>{{influencer.status_proposta}}</td>
+                    <td>{{influencer.data_envio}}</td>
+                    <td>{{influencer.tipo_remetente}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</body>

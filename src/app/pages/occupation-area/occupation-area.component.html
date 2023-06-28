@@ -1,0 +1,37 @@
+<header>
+  <app-navbar-logged></app-navbar-logged>
+</header>
+
+<body>
+  <div class="form-box">
+    <h1>Selecione sua área de atuação</h1>
+    <div class="area-container">
+      <div *ngFor="let area of areas" [ngClass]="{'selected': areasSelecionadas.includes(area)}"
+        (click)="selecionarArea(area)" class="pills-box">
+        <div class="pills-bt" [style.background-color]="area.color">
+          <span [style.background-color]="area.color">{{ area.name }}</span>
+          <i *ngIf="areasSelecionadas.includes(area)" class="fas fa-check"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="options-container" *ngIf="areasSelecionadas.includes(entretenimento)">
+      <h1>Selecione o segmento</h1>
+      <div *ngFor="let opcaoEntretenimento of opcoesEntretenimento"
+        [ngClass]="{'selected': areasSelecionadas.includes(opcaoEntretenimento)}"
+        (click)="selecionarArea(opcaoEntretenimento)" class="pills-box">
+        <div class="pills-bt" [style.background-color]="opcaoEntretenimento.color">
+          <span [style.background-color]="opcaoEntretenimento.color">{{ opcaoEntretenimento.name }}</span>
+          <i *ngIf="areasSelecionadas.includes(opcaoEntretenimento)" class="fas fa-check"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button (click)="onClickBack()" class="back-button">Voltar</button>
+      <button [disabled]="!algumaOpcaoSelecionada" class="edit-button">Salvar</button>
+    </div>
+  </div>
+
+  <app-background-movement></app-background-movement>
+</body>

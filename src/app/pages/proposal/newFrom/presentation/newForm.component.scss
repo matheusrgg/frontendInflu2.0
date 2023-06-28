@@ -1,0 +1,156 @@
+body {
+    padding: 2rem 3rem;
+}
+
+.title-page {
+    margin-bottom: 3rem;
+
+    h1 {
+        font-weight: 700;
+        font-size: 32px;
+    }
+}
+
+.heading-delete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-box {
+    padding: 0.8rem;
+    background-color: #efefef;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #b8b8b8;
+    }
+
+}
+
+.delete-icon {
+    cursor: pointer;
+}
+
+.form-field {
+    width: 40%;
+}
+
+.proposal-desription {
+    height: 150px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.textarea-form {
+    height: 150px;
+    padding: 1rem;
+}
+
+.button-group {
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-button {
+    width: 200px;
+    margin-right: 2rem;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 3px solid #87E9FF;
+    background-color: transparent;
+    color: #000;
+    font-weight: 900;
+    font-size: 1rem;
+    transition: .5;
+
+    &:hover {
+        background-color: #efefef;
+        border: 3px solid #efefef;
+    }
+}
+
+.edit-button {
+    width: 200px;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 3px solid #87E9FF;
+    background-color: #87E9FF;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 900;
+    transition: .5;
+
+    &:hover {
+        background-color: #acf0ff;
+        border: 3px solid #acf0ff;
+    }
+}
+
+.edit-button-accept {
+    width: 200px;
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: rgb(0, 239, 88);
+    border: 3px solid rgb(0, 239, 88);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 900;
+    transition: .5;
+
+    &:hover {
+        background-color: #76d671;
+        border: 3px solid #76d671;
+    }
+}
+
+.edit-button-decline {
+    width: 200px;
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: rgb(234, 31, 0);
+    border: 3px solid rgb(234, 31, 0);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 900;
+    transition: .5;
+
+    &:hover {
+        background-color: #f96262;
+        border: 3px solid #f96262;
+    }
+}
+
+.button-space {
+    margin-right: 1rem;
+}
+
+.disabled {
+    background-color: #b8b8b8;
+    border: #b8b8b8;
+    cursor: not-allowed;
+
+    &:hover {
+        border: #b8b8b8;
+        background-color: #b8b8b8;
+    }
+}
+
+@media (max-width: 1000px) {
+    body {
+        padding: 1rem;
+    }
+
+    .form-field {
+        width: 100%;
+    }
+}

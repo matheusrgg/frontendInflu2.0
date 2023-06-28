@@ -1,0 +1,62 @@
+<header>
+    <app-navbar-logged></app-navbar-logged>
+</header>
+
+<body>
+    <div class="heading">
+        <h1>Oii <span>{{user.nome}}</span>, beleza?</h1>
+        <h2>Recomendações para você</h2>
+    </div>
+
+    <section>
+        <div *ngIf="userType !== 'influenciador'">
+            <div class="recomendation-box influencer-box" *ngFor="let influencer of influencers">
+                <div class="card-title">
+                    <div class="user-image"> </div>
+
+                    <div>
+                        <h4 class="user-name">{{influencer.nome}}</h4>
+                        <h6 class="user-nickname">@{{influencer.nome}}</h6>
+                        <p class="user-description">{{influencer.descricao}}</p>
+                        <mat-chip-listbox aria-label="Área de atuação">
+                            <mat-chip>
+                                #tag
+                            </mat-chip>
+                        </mat-chip-listbox>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button mat-flat-button disabled>Perfil</button>
+                    <button mat-flat-button>Enviar Proposta</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div *ngIf="userType !== 'empreendedor'">
+            <div class="recomendation-box enterprise-box" *ngFor="let enterprise of enterprises">
+                <div class="card-title">
+                    <div class="enterprise-image"> </div>
+
+                    <div>
+                        <h4 class="user-name">{{enterprise.nome}}</h4>
+                        <h6 class="user-nickname">@{{enterprise.nome}}</h6>
+                        <p class="user-description">{{enterprise.descricao}} </p>
+                        <mat-chip-listbox aria-label="Área de atuação">
+                            <mat-chip>
+                                #tag
+                            </mat-chip>
+                        </mat-chip-listbox>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button mat-flat-button (click)="clickLookProfile(enterprise.nome)">Perfil</button>
+                    <button mat-flat-button (click)="clickNovaProposta(enterprise.nome)">Enviar Proposta</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>

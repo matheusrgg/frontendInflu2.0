@@ -1,0 +1,49 @@
+<div class="navbar">
+
+
+
+<!-- 
+    <div class="menu-btn" (click)="toggleMenu()">
+   
+        <i class="fa-solid fa-bars menu-btn mobile-menu-btn" aria-label="menu"></i>
+    </div> -->
+<!-- 
+    <div class="menu-content" [class.menu-content--open]="menuOpen">
+        <a><i class="fas fa-lock"></i> Aprenda</a>
+        <a [class.disabled]="!menuOpen" (click)="onClickProposalToggle()">Propostas</a>
+        <a><i class="fas fa-lock"></i> Notificações</a>
+    </div> -->
+
+    <div class="navbar-logo">
+        <img (click)="onClickLogo()" src="../../../assets/logoupretoazul.svg" alt="Logo">
+    </div>
+
+
+
+    <div class="end">
+        <div class="navbar-buttons">
+
+            <button><i class="fas fa-lock"></i></button>
+            <button (click)="onClickProposal()"><i class="fas fa-file-contract"></i></button>
+            <button><i class="fas fa-lock"></i></button>
+        </div>
+
+        <div class="navbar-profile" (click)="toggleDropdownMenu()">
+
+
+            <div class="avatar-frame">
+                <div class="avatar">
+                    <img class="avatar-img" src="../../../assets/persondefault.svg" alt="Perfil">
+                </div>
+            </div>
+            <div class="navbar-profile-dropdown" [@dropdownAnimation]="showDropdownMenu ? 'visible' : 'hidden'"
+                (clickOutside)="closeDropdownMenu()">
+                <a *ngIf="showDropdownMenu" (click)="profile()"><i class="menu-icons fa-solid fa-user"></i>Perfil</a>
+                <a *ngIf="showDropdownMenu" (click)="profileConfiguration()"><i
+                        class="menu-icons fa-solid fa-gear"></i>Configuração</a>
+                <a *ngIf="showDropdownMenu" (click)="logout()"><i
+                        class="menu-icons fa-solid fa-right-from-bracket"></i>Logout</a>
+            </div>
+        </div>
+    </div>
+</div>

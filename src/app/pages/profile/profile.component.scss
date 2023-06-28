@@ -1,0 +1,127 @@
+body {
+    padding: 0 2rem;
+    padding-top: 2rem;
+}
+
+.profile-head {
+    display: flex;
+}
+
+.profile-name {
+    .user-image {
+        height: 200px;
+        width: 200px;
+        margin-right: 2rem;
+        background-image: linear-gradient(rgba(4, 9, 30, .3), rgba(4, 9, 30, .9)), url("../../../assets/persondefault.svg");
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 6px;
+    }
+
+    h1 {
+        margin-top: 1rem;
+        margin-bottom: 0;
+        font-weight: 500;
+    }
+
+    h4 {
+        // margin-top: 
+    }
+}
+
+
+.profile-description {
+    width: 100%;
+    min-height: 200px;
+    padding: 1rem;
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 6px;
+}
+
+@media(max-width: 1000px) {
+
+    .profile-head {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-name {
+        display: flex;
+
+        .user-image {
+            height: 200px;
+            width: 200px;
+            margin-right: 2rem;
+            margin-bottom: 1rem;
+            background-image: linear-gradient(rgba(4, 9, 30, .3), rgba(4, 9, 30, .9)), url("../../../assets/persondefault.svg");
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 6px;
+        }
+
+        .name-insta {
+            display: flex;
+            flex-direction: column;
+
+            h1 {
+                margin-top: 1rem;
+                margin-bottom: 0;
+                font-weight: 500;
+            }
+
+            h4 {
+                // margin-top: 
+            }
+        }
+
+    }
+
+    .profile-description {
+        min-height: 100px;
+    }
+}
+
+@media(max-width: 500px) {
+
+    body {
+        padding: 0 1rem;
+        padding-top: 1rem;
+    }
+
+    .profile-name {
+        .user-image {
+            height: 100px;
+            width: 100px;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .name-insta {
+            display: flex;
+            flex-direction: column;
+
+            h1 {
+                font-size: 16px;
+                margin-top: 1rem;
+                margin-bottom: 0;
+                font-weight: 500;
+            }
+
+            span {
+                font-size: 11px;
+            }
+        }
+
+    }
+
+    .profile-description {
+        min-height: 100px;
+        padding: 0.5rem;
+
+        p {
+            font-size: 11px;
+        }
+    }
+}
