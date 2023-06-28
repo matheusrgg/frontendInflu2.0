@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { LoginService } from '../../login/service/login.service';
 import { IUser } from '../../login/interfaces/user1.interface';
 import jwt_decode from 'jwt-decode';
-import { liatAllEnterpriseInfluencerService } from 'src/app/shared/services/requests/listAllEnterpriseInfleuncers.service';
+import { EmpresaService } from 'src/app/shared/services/empresa.service';
+import { InfluenciadorService } from 'src/app/shared/services/influenciador.service';
 
 @Component({
   selector: 'app-logged-home',
@@ -23,15 +24,16 @@ export class LoggedHomeComponent implements OnInit {
 
     private router: Router,
     private loginService: LoginService,
-    private listAll: liatAllEnterpriseInfluencerService
+    private influenciadorService: InfluenciadorService,
+    private empresaService: EmpresaService
   ) { }
 
   ngOnInit(): void {
     this.userType = this.loginService.currentUser.perfil;
     this.getDecodeAccessToken();
     this.userDisplayName = this.getDecodeAccessToken();
-    this.listAll.listAllInfluencers().subscribe(datas => (this.influencers = datas));
-    this.listAll.listAllEnterprises().subscribe(datas => (this.enterprises = datas));
+    this.influenciadorService.listAllInfluencers().subscribe(datas => (this.influencers = datas));
+    this.empresaService.listAllEnterprises().subscribe(datas => (this.enterprises = datas));
     this.getUser();
 
   }

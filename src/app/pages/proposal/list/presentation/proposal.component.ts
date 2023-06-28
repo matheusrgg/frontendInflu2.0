@@ -4,10 +4,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { LoginService } from '../../../login/service/login.service';
 import { Router } from '@angular/router';
-import { UtilsService } from 'src/app/shared/services/utils.service';
+import { UtilsService } from 'src/app/shared/utils/utils.service';
 import { LoadingService } from 'src/app/shared/components/loading/loading.service';
 import { finalize } from 'rxjs';
-import { listRecebidasEnviadasService } from 'src/app/shared/services/requests/listRecebidasEnviadas.service';
+import { listRecebidasEnviadasService } from 'src/app/shared/services/proposta/listRecebidasEnviadas.service';
 
 
 
@@ -43,33 +43,48 @@ export class ProposalComponent implements OnInit {
     this.userInfo = this.loginService.currentUser;
     this.userType = this.userInfo.perfil;
    
-    // if (this.userInfo.perfil === "empreendedor") {
-    //   this.listProposalSerivce.listAllProposalsEmpresasRecebidas().subscribe(
-    //     data =>
-    //     (
-    //       this.proposalsRecebidas = data
-    //       // console.log("oq ue aocntece aqui", data)
-    //     )
+    if (this.userInfo.perfil === "empreendedor") {
+      this.listProposalSerivce.listAllProposalsRecebidasEmpresa().subscribe(
+        (data) =>{
+          this.proposalsRecebidas = data
+          this.loadingService.loadingOff()
+        }
+        
+       
 
-    //   )}
-
-
-    this.listProposalSerivce.listAllProposalsRecebidasInfluenciador().subscribe(
-      (data) => {
-        // console.log("o que vem daqui", data);
-        this.proposalsRecebidas = data
-        this.loadingService.loadingOff()
-        console.log("this.proposal", this.proposalsRecebidas);
-      }
-
-    )
-
-    this.utilsService.getProposta().subscribe((data: any) => {
-      this.listProposalSerivce.listAllProposalsRecebidasInfluenciador().subscribe(
-        data =>
-          (this.proposalsRecebidas = data)
       )
-    })
+      this.utilsService.getProposta().subscribe((data: any) => {
+        this.listProposalSerivce.listAllProposalsRecebidasEmpresa().subscribe(
+          data =>
+            (this.proposalsRecebidas = data)
+        )
+      })
+    
+    }
+    
+    
+    
+    else{
+      this.listProposalSerivce.listAllProposalsRecebidasInfluenciador().subscribe(
+        (data) => {
+          // console.log("o que vem daqui", data);
+          this.proposalsRecebidas = data
+          this.loadingService.loadingOff()
+          console.log("this.proposal", this.proposalsRecebidas);
+        }
+  
+      )
+  
+      this.utilsService.getProposta().subscribe((data: any) => {
+        this.listProposalSerivce.listAllProposalsRecebidasInfluenciador().subscribe(
+          data =>
+            (this.proposalsRecebidas = data)
+        )
+      })
+  
+    }
+
+
 
    
 

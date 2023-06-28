@@ -11,20 +11,21 @@ export class NewProposalService {
     functionCorpoObj(
         tipoRemetente: string, 
         mensagemProposta: string, 
-        influenciadorId: string,
-        empresaId: number, 
-        id_remetente: number
+        id_influenciador: string,
+        id_empresa: number, 
+        id_remetente: number,
+        id_destinatario: string
     ): ProposalInterface {
         return {
             mensagem_proposta: mensagemProposta,
             veiculo_midiatico: 'instagram',
             valor_divulgacao: '',
-            influenciadorId: influenciadorId,
-            empresaId: empresaId,
+            id_influenciador: id_influenciador,
+            id_empresa: id_empresa,
             status_proposta: 'pendente',
             tipo_remetente: tipoRemetente,
             id_remetente: id_remetente,
-            id_destinatario: "1",
+            id_destinatario:id_destinatario,
             data_envio: new Date(),
             updated:false
         }

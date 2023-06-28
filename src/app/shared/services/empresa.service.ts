@@ -10,14 +10,9 @@ import { Enterprise, Influencer } from "src/app/pages/logged-home/interfaces/inf
     providedIn: 'root'
 })
 
-export class liatAllEnterpriseInfluencerService { 
+export class EmpresaService { 
 
     constructor(public http: HttpClient) { }
-
-
-    listAllInfluencers() {
-        return this.http.get<Influencer[]>(environment.APILISTAINFLUENCER);
-    }
 
     listAllEnterprises() {
         return this.http.get<Enterprise[]>(environment.APILISTAEMPRESA);

@@ -6,10 +6,11 @@ import { Enterprise, Influencer } from '../../../logged-home/interfaces/influenc
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { LoginService } from '../../../login/service/login.service';
 import { ProposalFormService } from '../service/proposal-form.service';
-import { UtilsService } from 'src/app/shared/services/utils.service';
+import { UtilsService } from 'src/app/shared/utils/utils.service';
 import { LoadingService } from 'src/app/shared/components/loading/loading.service';
 import { ProposalInterface } from '../proposal-interface';
-import { NewProposalService } from 'src/app/shared/services/newProposal.service';
+import { NewProposalService } from 'src/app/shared/utils/newProposal.service';
+import { PropostaService } from 'src/app/shared/services/proposta/proposta.service';
 
 
 interface Media {
@@ -67,7 +68,8 @@ export class ProposalFormComponent implements OnInit {
         private route: ActivatedRoute,
         private utilsService: UtilsService,
         private loadingService: LoadingService,
-        private newProposalService: NewProposalService
+        private newProposalService: NewProposalService,
+        private propostaService: PropostaService
     ) { }
 
     proposalForm = new FormGroup({
@@ -108,7 +110,7 @@ export class ProposalFormComponent implements OnInit {
     }
 
     getIdProposal(id: any) {
-        this.proposalFormService.getIdProposal(id).subscribe((data) => {
+        this.propostaService.getIdProposal(id).subscribe((data) => {
             this.proposalForm.patchValue({
                 name: data.id_destinatario,
                 description: data.mensagem_proposta
@@ -127,7 +129,7 @@ export class ProposalFormComponent implements OnInit {
         if(this.updatedStatus == 'true'){
             alert("Essa proposta já foi Aceita ou Recusada")
         }else{
-            this.proposalFormService.getIdProposal(this.id).subscribe((data) => {
+            this.propostaService.getIdProposal(this.id).subscribe((data) => {
                 this.updateProposta({
                     status_proposta: status,
                     id: this.id,
@@ -140,7 +142,7 @@ export class ProposalFormComponent implements OnInit {
     }
 
     updateProposta({ status_proposta, id , updated }: any) {
-        this.proposalFormService.updateProposal(status_proposta, id, updated)
+        this.propostaService.updateProposal(status_proposta, id, updated)
             .subscribe({
                 next: (res: any) => {
                     console.log(res)
@@ -154,7 +156,7 @@ export class ProposalFormComponent implements OnInit {
     }
 
     onCreateProposal(obj: ProposalInterface) {
-        this.proposalFormService.createProposal(
+        this.propostaService.createProposal(
             obj
         )
             .subscribe({
@@ -171,7 +173,7 @@ export class ProposalFormComponent implements OnInit {
 
 
     onDelete(){
-        this.proposalFormService.deleteProposal(this.id).subscribe((data)=>{})
+        this.propostaService.deleteProposal(this.id).subscribe((data)=>{})
         this.router.navigate(["/proposal"])
     }
 
@@ -179,7 +181,7 @@ export class ProposalFormComponent implements OnInit {
     clickWithName() {
         this.userInfo = this.loginService.currentUser;
         this.onCreateProposal(this.newProposalService.functionCorpoObj('influenciador', JSON.stringify(this.proposalForm.value.description),
-            this.userInfo.id, this.idEmpresa, this.userInfo.id))
+            this.userInfo.id, this.idEmpresa, this.userInfo.id, JSON.stringify(this.proposalForm.value.name) ))
     }
 
     loadIdEmpresa(name: any) {

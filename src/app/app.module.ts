@@ -41,7 +41,7 @@ import { ProfileConfigComponent } from './pages/profile-config/presentation/prof
 import { ProposalComponent } from './pages/proposal/list/presentation/proposal.component';
 
 import { NgxMaskModule } from 'ngx-mask';
-import { AuthGuard } from './shared/services/auth.guard';
+import { AuthGuard } from './shared/utils/auth.guard';
 import { ProposalFormComponent } from './pages/proposal/form/presentation/proposal-form.component';
 
 import { LoadingComponent } from './shared/components/loading/loading.component';
@@ -51,7 +51,7 @@ import { LoadingComponent } from './shared/components/loading/loading.component'
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { VisitProfileComponent } from './pages/visit-profile/visit-profile.component';
-import { NewFormComponent } from './pages/proposal/newFrom/presentation/newForm.component';
+import { NewFormComponent } from './pages/proposal/newFrom/newForm.component';
 import { ProposalEnviadasComponent } from './pages/proposal/list-enviadas/proposal-enviadas.component';
 
 

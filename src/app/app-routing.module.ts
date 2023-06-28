@@ -13,14 +13,14 @@ import { MoreEnterpriseComponent } from './pages/home/more-enterprise/more-enter
 import { MoreCatchuComponent } from './pages/home/more-catchu/more-catchu.component';
 import { RegisterEmpresaComponent } from './pages/cadastro/register-empresa/presentation/register-empresa.component';
 import { ChooseProfileComponent } from './pages/cadastro/choose-profile/choose-profile.component';
-import { AuthGuard } from './shared/services/auth.guard';
+import { AuthGuard } from './shared/utils/auth.guard';
 import { ProfileConfigComponent } from './pages/profile-config/presentation/profile-config.component';
 import { ProposalComponent } from './pages/proposal/list/presentation/proposal.component';
 import { ProposalFormComponent } from './pages/proposal/form/presentation/proposal-form.component';
 import { ProposalEnviadasComponent } from './pages/proposal/list-enviadas/proposal-enviadas.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { VisitProfileComponent } from './pages/visit-profile/visit-profile.component';
-import { NewFormComponent } from './pages/proposal/newFrom/presentation/newForm.component';
+import { NewFormComponent } from './pages/proposal/newFrom/newForm.component';
 
 
 

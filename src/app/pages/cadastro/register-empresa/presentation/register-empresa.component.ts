@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { AbstractControl } from '@angular/forms';
 import { RegisterEmpresaService } from '../service/register-empresa.service';
-import { ValidadorCpfCnpjService } from 'src/app/shared/services/validadorCpfCnpj.service';
+
 
 
 
@@ -41,7 +41,7 @@ export class RegisterEmpresaComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private registerEmpresaService: RegisterEmpresaService,
-    private validadorCpfCnpjService: ValidadorCpfCnpjService
+ 
   ) { }
   ngOnInit() {
     this.initRegisterForm();

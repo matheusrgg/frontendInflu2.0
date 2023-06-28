@@ -20,24 +20,21 @@ export class listRecebidasEnviadasService {
 
     listAllProposalsRecebidasInfluenciador() {
         const api = this.http.get<any[]>(`${environment.APILISTPROPOSALINFLURECEBS}/${this.loginService.currentUser.id}`);  
-        console.log("o que ta vindo??", api)
         return api
     }
 
-    // listEmpresaByName(id:any){
-    //     const api = this.http.get<any[]>(`${environment.APILISTAEMPRESA}/${id}`);  
-    //     return api
-    // }
-
-    // listAllProposalsEmpresasRecebidas() {
-    //     console.log(this.loginService.currentUser.id);
-    //     const api = this.http.get<any[]>(`${environment.APILISTPROPOSALEMPRERECEBS}/${this.loginService.currentUser.id}`);   
-    //     return api
-    // }APILISTPROPOSALINFLUENVIO
-
-
     listAllProposalsEnviadasInfluenciador() {
         const api = this.http.get<any[]>(`${environment.APILISTPROPOSALINFLUENVIO}/${this.loginService.currentUser.id}`);   
+        return api
+    }
+
+    listAllProposalsRecebidasEmpresa() {
+        const api = this.http.get<any[]>(`${environment.APILISTPROPOSALEMPRERECEBS}/${this.loginService.currentUser.id}`);  
+        return api
+    }
+
+    listAllProposalsEnviadasEmpresa() {
+        const api = this.http.get<any[]>(`${environment.APILISTPROPOSALEMPREENVIO}/${this.loginService.currentUser.id}`);   
         return api
     }
 
