@@ -73,7 +73,7 @@ export class LoggedHomeComponent implements OnInit {
   }
 
   clickNovaProposta(nome: any) {
-    this.router.navigate(["/proposalFormId/" + nome])
+    this.router.navigate(["/proposalComId/" + nome])
   }
 
   clickLookProfile(nome: any) {

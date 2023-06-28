@@ -53,6 +53,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { VisitProfileComponent } from './pages/visit-profile/visit-profile.component';
 import { NewFormComponent } from './pages/proposal/newFrom/newForm.component';
 import { ProposalEnviadasComponent } from './pages/proposal/list-enviadas/proposal-enviadas.component';
+import { ProposalFormComIdComponent } from './pages/proposal/formComId/formComId.component';
 
 
 
@@ -82,7 +83,8 @@ import { ProposalEnviadasComponent } from './pages/proposal/list-enviadas/propos
     LoadingComponent,
     ProfileComponent,
     VisitProfileComponent,
-    NewFormComponent
+    NewFormComponent,
+    ProposalFormComIdComponent
   ],
   imports: [
     BrowserModule,

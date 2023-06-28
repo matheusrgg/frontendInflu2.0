@@ -89,7 +89,6 @@ export class ProposalFormComponent implements OnInit {
         this.route.paramMap.subscribe((params: ParamMap) => {
             console.log(params);
             this.id = params.get('id')
-            // console.log("teste agora vai ID", this.id)
         });
 
         if (this.bussinessMan) {

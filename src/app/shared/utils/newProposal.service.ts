@@ -11,9 +11,9 @@ export class NewProposalService {
     functionCorpoObj(
         tipoRemetente: string, 
         mensagemProposta: string, 
-        id_influenciador: string,
+        id_influenciador: number,
         id_empresa: number, 
-        id_remetente: number,
+        id_remetente: string,
         id_destinatario: string
     ): ProposalInterface {
         return {

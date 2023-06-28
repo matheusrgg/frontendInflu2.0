@@ -19,5 +19,13 @@ export class EmpresaService {
     }
 
 
+    
+
+    getEmpresaName(name: any) {
+        const api = this.http.get<any>(`${environment.APIIDBYNAMEEMPRESA}/${name}`);
+        return api
+    }
+
+
    
 }

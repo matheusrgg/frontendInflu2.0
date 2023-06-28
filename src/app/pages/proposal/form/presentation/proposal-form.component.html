@@ -3,40 +3,6 @@
 </header>
 
 <body>
-    <div class="influencer-form" *ngIf="userType == 'newProposalId'">
-
-        <form [formGroup]="proposalForm" class="send-proposal-form">
-            <!-- <div class="influencer-form" *ngIf="userType == 'influenciador'"> -->
-            <div class="title-page">
-                <h1>Enviar Proposta</h1>
-            </div>
-    
-        
-            <div>
-                <h4>Nome da Empresa</h4>
-                <p>
-                    <mat-form-field class="form-field" appearance="outline">
-                        <mat-label>Nome da Empresa</mat-label>
-                        <input matInput placeholder="Nome da Empresa" formControlName="name" />
-                    </mat-form-field>
-
-                </p>
-            </div>
-            <h4>Descrição da Proposta</h4>
-            <textarea class="form-field textarea-form" placeholder="Descreva sua proposta para a empresa..."
-                formControlName="description"></textarea>
-        </form>
-
-        <div class="footer-dialog" mat-dialog-actions>
-            <div class="button-group">
-                <button mat-dialog-close class="back-button" (click)="onClickCancel()">Voltar</button>
-                <button class="edit-button" (click)="clickWithName()">Enviar</button>
-            </div>
-        </div>
-
-
-    </div>
-
     <div class="influencer-form" *ngIf="userType == 'responderProposta'">
         <div class="heading-delete">
             <h1>Proposta Recebida de Empresa {{remetenteName}}</h1>

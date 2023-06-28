@@ -21,6 +21,7 @@ import { ProposalEnviadasComponent } from './pages/proposal/list-enviadas/propos
 import { ProfileComponent } from './pages/profile/profile.component';
 import { VisitProfileComponent } from './pages/visit-profile/visit-profile.component';
 import { NewFormComponent } from './pages/proposal/newFrom/newForm.component';
+import { ProposalFormComIdComponent } from './pages/proposal/formComId/formComId.component';
 
 
 
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: 'proposalForm/:id', component: ProposalFormComponent, pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'proposalFormId/:name', component: ProposalFormComponent, pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'proposalEnviadas', component: ProposalEnviadasComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: 'proposalComId/:id', component: ProposalFormComIdComponent, pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'visit-profile/:id', component: VisitProfileComponent, pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'visit-profile/:name', component: VisitProfileComponent, pathMatch: 'full', canActivate: [AuthGuard] },

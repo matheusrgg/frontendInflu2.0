@@ -14,19 +14,16 @@ import { InfluenciadorService } from 'src/app/shared/services/influenciador.serv
 import { PropostaService } from 'src/app/shared/services/proposta/proposta.service';
 
 
-
-interface Media {
-    value: string;
-    viewValue: string;
-}
-
-
 @Component({
     selector: 'app-newForm',
     templateUrl: './newForm.component.html',
     styleUrls: ['./newForm.component.scss']
 })
 export class NewFormComponent implements OnInit {
+
+    idDestinatario: any
+    idRemetente: any
+    mensagemProposta: string = ''
 
 
 
@@ -36,14 +33,12 @@ export class NewFormComponent implements OnInit {
     userType: string = '';
     constructor(
         private router: Router,
-        private proposalFormService: ProposalFormService,
         private loadingService: LoadingService,
         private newProposalService: NewProposalService,
         private loginService: LoginService,
-
         private influenciadorService: InfluenciadorService,
-    private empresaService: EmpresaService,
-    private propostaService: PropostaService
+        private empresaService: EmpresaService,
+        private propostaService: PropostaService
     ) { }
 
     proposalForm = new FormGroup({
@@ -58,8 +53,6 @@ export class NewFormComponent implements OnInit {
         this.influenciadorService.listAllInfluencers().subscribe(datas => (this.influencers = datas));
     }
 
-
-
     onClickCancel() {
         this.router.navigate(["/proposal"])
     }
@@ -67,21 +60,39 @@ export class NewFormComponent implements OnInit {
     click() {
         this.loadingService.loadingOn()
         this.userInfo = this.loginService.currentUser;
+        this.idDestinatario = this.proposalForm.value.name
+        this.idRemetente = this.userInfo.id
+        this.mensagemProposta = JSON.stringify(this.proposalForm.value.description)
 
         if (this.userInfo.perfil === "empreendedor") {
-            this.onCreateProposal(this.newProposalService.functionCorpoObj('marca', JSON.stringify(this.proposalForm.value.description),
-                this.userInfo.id, 1, this.userInfo.id, JSON.stringify(this.proposalForm.value.name)))
-        }
+            this.onCreateProposal(this.newProposalService.functionCorpoObj(
+                'marca',
+                this.mensagemProposta,
+                this.idDestinatario,
+                this.idRemetente,
+                this.idRemetente,
+                this.idDestinatario,
 
-        this.onCreateProposal(this.newProposalService.functionCorpoObj('influenciador', JSON.stringify(this.proposalForm.value.description),
-            this.userInfo.id, 1, this.userInfo.id, JSON.stringify(this.proposalForm.value.name)))
+
+            ))
+        } else {
+            this.onCreateProposal(
+                this.newProposalService.functionCorpoObj(
+                    'influenciador',
+                    this.mensagemProposta,
+                    this.idRemetente,
+                    this.idDestinatario,
+                    this.idRemetente,
+                    this.idDestinatario,
+
+                )
+
+            )}
+
     }
 
     onCreateProposal(obj: ProposalInterface) {
-        this.propostaService.createProposal(
-            obj
-        )
-
+        this.propostaService.createProposal(obj)
             .subscribe({
                 next: (res: any) => {
                     this.loadingService.loadingOff()
@@ -92,9 +103,7 @@ export class NewFormComponent implements OnInit {
                     console.log(err.erro)
                 }
             })
-
     }
-
 
 }
 
