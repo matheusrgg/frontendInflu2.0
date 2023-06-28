@@ -26,7 +26,7 @@ export class ProposalEnviadasComponent implements OnInit {
 
 
   loadApi(){
-    this.listProposalEnviadasSerivce.listAllProposals().subscribe(
+    this.listProposalEnviadasSerivce.listAllProposalsEnviadasInfluenciador().subscribe(
         data =>
         // console.log("teste data", data)
           (this.proposalsEnviadasTeste = data)

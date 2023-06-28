@@ -43,8 +43,6 @@ export class ProposalComponent implements OnInit {
     this.userInfo = this.loginService.currentUser;
     this.userType = this.userInfo.perfil;
    
-
-this.loadApi()
     // if (this.userInfo.perfil === "empreendedor") {
     //   this.listProposalSerivce.listAllProposalsEmpresasRecebidas().subscribe(
     //     data =>
@@ -56,7 +54,7 @@ this.loadApi()
     //   )}
 
 
-    this.listProposalSerivce.listAllProposalsRecebidas().subscribe(
+    this.listProposalSerivce.listAllProposalsRecebidasInfluenciador().subscribe(
       (data) => {
         // console.log("o que vem daqui", data);
         this.proposalsRecebidas = data
@@ -67,7 +65,7 @@ this.loadApi()
     )
 
     this.utilsService.getProposta().subscribe((data: any) => {
-      this.listProposalSerivce.listAllProposalsRecebidas().subscribe(
+      this.listProposalSerivce.listAllProposalsRecebidasInfluenciador().subscribe(
         data =>
           (this.proposalsRecebidas = data)
       )
@@ -80,15 +78,6 @@ this.loadApi()
 
 
 
- 
-
-  loadApi() {
-    this.listProposalEnviadasSerivce.listAllProposals().subscribe(
-      data =>
-        // console.log("teste data", data)
-        (this.proposalsEnviadas = data)
-    )
-  }
 
 
   newProposal() {
@@ -115,6 +104,4 @@ this.loadApi()
     this.showReceivedProposals = false;
     this.showSentProposals = true;
   }
-
-
-}
+} 

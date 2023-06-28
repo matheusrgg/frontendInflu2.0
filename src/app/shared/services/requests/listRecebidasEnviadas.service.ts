@@ -18,7 +18,7 @@ export class listRecebidasEnviadasService {
         private loginService: LoginService,
         ) { }
 
-    listAllProposalsRecebidas() {
+    listAllProposalsRecebidasInfluenciador() {
         const api = this.http.get<any[]>(`${environment.APILISTPROPOSALINFLURECEBS}/${this.loginService.currentUser.id}`);  
         console.log("o que ta vindo??", api)
         return api
@@ -33,10 +33,10 @@ export class listRecebidasEnviadasService {
     //     console.log(this.loginService.currentUser.id);
     //     const api = this.http.get<any[]>(`${environment.APILISTPROPOSALEMPRERECEBS}/${this.loginService.currentUser.id}`);   
     //     return api
-    // }
+    // }APILISTPROPOSALINFLUENVIO
 
 
-    listAllProposals() {
+    listAllProposalsEnviadasInfluenciador() {
         const api = this.http.get<any[]>(`${environment.APILISTPROPOSALINFLUENVIO}/${this.loginService.currentUser.id}`);   
         return api
     }
