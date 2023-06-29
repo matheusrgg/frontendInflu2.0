@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
-import { ProposalInterface } from "src/app/pages/proposal/form/proposal-interface";
+import { ProposalInterface } from "src/app/pages/proposal/form/formResposta/proposal-interface";
+
 
 
 @Injectable({

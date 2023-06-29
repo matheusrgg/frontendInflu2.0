@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login/service/login.service';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { ProposalFormService } from '../proposal/form/service/proposal-form.service';
+import { ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-visit-profile',

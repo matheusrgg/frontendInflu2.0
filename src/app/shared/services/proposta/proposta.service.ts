@@ -1,10 +1,10 @@
 
-import { ProposalInterface } from "src/app/pages/proposal/form/proposal-interface";
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 import { environment } from "src/environments/environment.development";
 import { Enterprise, Influencer } from "src/app/pages/logged-home/interfaces/influencer.interface";
+import { ProposalInterface } from "src/app/pages/proposal/form/formResposta/proposal-interface";
 
 @Injectable({
     providedIn: 'root'

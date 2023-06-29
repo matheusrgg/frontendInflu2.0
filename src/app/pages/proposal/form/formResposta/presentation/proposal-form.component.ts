@@ -2,15 +2,17 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable, map, startWith } from 'rxjs';
 
-import { Enterprise, Influencer } from '../../../logged-home/interfaces/influencer.interface';
+
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { LoginService } from '../../../login/service/login.service';
-import { ProposalFormService } from '../service/proposal-form.service';
+
+
 import { UtilsService } from 'src/app/shared/utils/utils.service';
 import { LoadingService } from 'src/app/shared/components/loading/loading.service';
 import { ProposalInterface } from '../proposal-interface';
-import { NewProposalService } from 'src/app/shared/utils/newProposal.service';
+
 import { PropostaService } from 'src/app/shared/services/proposta/proposta.service';
+import { Enterprise, Influencer } from 'src/app/pages/logged-home/interfaces/influencer.interface';
+import { LoginService } from 'src/app/pages/login/service/login.service';
 
 
 interface Media {
@@ -49,12 +51,6 @@ export class ProposalFormComponent implements OnInit {
     influencers: Influencer[] = [];
     filteredInfluencers!: Observable<Influencer[]>;
     idEmpresa: any
-
-    media: Media[] = [
-        { value: 'instagram-0', viewValue: 'Instagram' },
-
-    ];
-
     proposal: any = []
 
     id: any;
@@ -64,11 +60,9 @@ export class ProposalFormComponent implements OnInit {
     constructor(
         private router: Router,
         private loginService: LoginService,
-        private proposalFormService: ProposalFormService,
         private route: ActivatedRoute,
         private utilsService: UtilsService,
         private loadingService: LoadingService,
-        private newProposalService: NewProposalService,
         private propostaService: PropostaService
     ) { }
 
@@ -79,33 +73,9 @@ export class ProposalFormComponent implements OnInit {
 
 
     ngOnInit(): void {
-
-        this.route.paramMap.subscribe((params: ParamMap) => {
-            console.log(params);
-            this.loadIdEmpresa(params.get('name'))
-            this.bussinessMan = params.get('name')
-            console.log("teste agora vai ID", this.bussinessMan)
-        });
-        this.route.paramMap.subscribe((params: ParamMap) => {
-            console.log(params);
-            this.id = params.get('id')
-        });
-
-        if (this.bussinessMan) {
-            console.log("ok ta indo")
-            this.userType = 'newProposalId'
-            console.log("pq nao foi oo form certo", this.userType);
-            this.proposalForm.controls['name'].setValue(this.bussinessMan)
-        } else if (this.id) {
-            this.userType = 'responderProposta'
-            this.getIdProposal(this.id)
-            this.proposalForm.controls['name'].disable();
-            this.proposalForm.controls['description'].disable();
-            console.log("ta vazio neh", this.proposal);
-        }
-        else {
-            this.userType = 'novaProposta'
-        }
+        this.userInfo = this.loginService.currentUser;
+        this.route.paramMap.subscribe((params: ParamMap) => {this.id = params.get('id')});
+        this.getIdProposal(this.id)
     }
 
     getIdProposal(id: any) {
@@ -118,13 +88,12 @@ export class ProposalFormComponent implements OnInit {
             this.receivedProposal = data.mensagem_proposta;
             this.updatedStatus = data.updated
             this.statusPropostaBody = data.status_proposta
-            console.log("teste Updated Proposta???", this.updatedStatus);
+            this.proposalForm.controls['name'].disable();
+            this.proposalForm.controls['description'].disable();
         })
     }
 
     statusProposta(status: string) {
-        this.userInfo = this.loginService.currentUser;
-        console.log("de quem é", this.userInfo.id);
         if(this.updatedStatus == 'true'){
             alert("Essa proposta já foi Aceita ou Recusada")
         }else{
@@ -170,30 +139,13 @@ export class ProposalFormComponent implements OnInit {
             })
     }
 
-
     onDelete(){
         this.propostaService.deleteProposal(this.id).subscribe((data)=>{})
         this.router.navigate(["/proposal"])
     }
 
-
-    clickWithName() {
-        this.userInfo = this.loginService.currentUser;
-        this.onCreateProposal(this.newProposalService.functionCorpoObj('influenciador', JSON.stringify(this.proposalForm.value.description),
-            this.userInfo.id, this.idEmpresa, this.userInfo.id, JSON.stringify(this.proposalForm.value.name) ))
-    }
-
-    loadIdEmpresa(name: any) {
-        this.proposalFormService.getEmpresaName(name).subscribe((data) => {
-            this.idEmpresa = data.id
-        })
-    }
-
-    
     onClickCancel() {
         this.router.navigate(["/proposal"])
     }
 
-
 }
-

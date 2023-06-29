@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { LoginService } from '../../../login/service/login.service';
+
 import { Router } from '@angular/router';
 import { UtilsService } from 'src/app/shared/utils/utils.service';
 import { LoadingService } from 'src/app/shared/components/loading/loading.service';
 import { finalize } from 'rxjs';
 import { listRecebidasEnviadasService } from 'src/app/shared/services/proposta/listRecebidasEnviadas.service';
+import { LoginService } from 'src/app/pages/login/service/login.service';
 
 
 

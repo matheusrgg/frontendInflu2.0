@@ -2,16 +2,17 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable, map, startWith } from 'rxjs';
 
-import { Enterprise, Influencer } from '../../logged-home/interfaces/influencer.interface';
+
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { LoginService } from '../../login/service/login.service';
-import { ProposalInterface } from '../form/proposal-interface';
-import { ProposalFormService } from '../form/service/proposal-form.service';
+
+import { ProposalInterface } from '../formResposta/proposal-interface';
 import { LoadingService } from 'src/app/shared/components/loading/loading.service';
 import { NewProposalService } from 'src/app/shared/utils/newProposal.service';
 import { EmpresaService } from 'src/app/shared/services/empresa.service';
 import { InfluenciadorService } from 'src/app/shared/services/influenciador.service';
 import { PropostaService } from 'src/app/shared/services/proposta/proposta.service';
+import { LoginService } from 'src/app/pages/login/service/login.service';
+import { Enterprise, Influencer } from 'src/app/pages/logged-home/interfaces/influencer.interface';
 
 
 @Component({
@@ -24,13 +25,11 @@ export class NewFormComponent implements OnInit {
     idDestinatario: any
     idRemetente: any
     mensagemProposta: string = ''
-
-
-
     userInfo: any;
     enterprises!: Enterprise[];
     influencers!: Influencer[];
     userType: string = '';
+    
     constructor(
         private router: Router,
         private loadingService: LoadingService,

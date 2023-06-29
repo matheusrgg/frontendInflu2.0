@@ -1,5 +1,5 @@
 
-import { ProposalInterface } from "src/app/pages/proposal/form/proposal-interface";
+
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
@@ -14,18 +14,13 @@ export class InfluenciadorService {
 
     constructor(public http: HttpClient) { }
 
-
     listAllInfluencers() {
         return this.http.get<Influencer[]>(environment.APILISTAINFLUENCER);
     }
-
-
-
 
     getInfluenciadorId(id: any) {
         return this.http.get<any>(`${environment.APILISTAINFLUENCER}/${id}`);
 
     }
 
-   
 }

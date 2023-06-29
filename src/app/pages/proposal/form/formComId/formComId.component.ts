@@ -1,14 +1,14 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable, map, startWith } from 'rxjs';
-import { LoginService } from '../../login/service/login.service';
+import { LoginService } from '../../../login/service/login.service';
 import { PropostaService } from 'src/app/shared/services/proposta/proposta.service';
 import { NewProposalService } from 'src/app/shared/utils/newProposal.service';
-import { ProposalInterface } from '../form/proposal-interface';
 import { LoadingService } from 'src/app/shared/components/loading/loading.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmpresaService } from 'src/app/shared/services/empresa.service';
 import { InfluenciadorService } from 'src/app/shared/services/influenciador.service';
+import { ProposalInterface } from '../formResposta/proposal-interface';
 
 
 interface Media {
@@ -23,33 +23,26 @@ interface Media {
     styleUrls: ['./formComId.component.scss']
 })
 export class ProposalFormComIdComponent implements OnInit {
+    
     userInfo: any;
     idEmpresa: any
-
     idDestinatario: any
     idRemetente: any
     mensagemProposta: string = ''
-
     userType: string = '';
     nomeEmpresa: any
-
     enterpriseCtrl = new FormControl('');
-
-
     remetenteName: string = "";
     receivedProposal: string = "";
-
     influencerCtrl = new FormControl('');
-
-
-
     proposal: any = []
-
     id: any;
     bussinessMan: any
     updatedStatus: string = "false"
     statusPropostaBody: string = ""
     nomeInfluenciador:any
+
+
     constructor(
         private router: Router,
         private loginService: LoginService,

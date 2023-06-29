@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/pages/login/service/login.service';
 import { listRecebidasEnviadasService } from 'src/app/shared/services/proposta/listRecebidasEnviadas.service';
-import { LoginService } from '../../login/service/login.service';
+
 
 
 

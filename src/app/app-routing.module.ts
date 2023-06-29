@@ -15,13 +15,15 @@ import { RegisterEmpresaComponent } from './pages/cadastro/register-empresa/pres
 import { ChooseProfileComponent } from './pages/cadastro/choose-profile/choose-profile.component';
 import { AuthGuard } from './shared/utils/auth.guard';
 import { ProfileConfigComponent } from './pages/profile-config/presentation/profile-config.component';
-import { ProposalComponent } from './pages/proposal/list/presentation/proposal.component';
-import { ProposalFormComponent } from './pages/proposal/form/presentation/proposal-form.component';
-import { ProposalEnviadasComponent } from './pages/proposal/list-enviadas/proposal-enviadas.component';
+
 import { ProfileComponent } from './pages/profile/profile.component';
 import { VisitProfileComponent } from './pages/visit-profile/visit-profile.component';
-import { NewFormComponent } from './pages/proposal/newFrom/newForm.component';
-import { ProposalFormComIdComponent } from './pages/proposal/formComId/formComId.component';
+
+import { ProposalFormComIdComponent } from './pages/proposal/form/formComId/formComId.component';
+import { ProposalComponent } from './pages/proposal/list/list-recbidas/presentation/proposal.component';
+import { ProposalFormComponent } from './pages/proposal/form/formResposta/presentation/proposal-form.component';
+import { ProposalEnviadasComponent } from './pages/proposal/list/list-enviadas/proposal-enviadas.component';
+import { NewFormComponent } from './pages/proposal/form/newFrom/newForm.component';
 
 
 
