@@ -22,5 +22,10 @@ export class InfluenciadorService {
 
 
 
+    getInfluenciadorId(id: any) {
+        return this.http.get<any>(`${environment.APILISTAINFLUENCER}/${id}`);
+
+    }
+
    
 }

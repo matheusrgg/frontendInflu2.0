@@ -21,9 +21,9 @@ export class EmpresaService {
 
     
 
-    getEmpresaName(name: any) {
-        const api = this.http.get<any>(`${environment.APIIDBYNAMEEMPRESA}/${name}`);
-        return api
+    getEmpresaId(id: any) {
+        return this.http.get<any>(`${environment.APILISTAEMPRESA}/${id}`);
+
     }
 
 
